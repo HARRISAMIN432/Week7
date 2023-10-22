@@ -1,16 +1,16 @@
 #include<iostream>
 #include<iomanip>
 using namespace std;
-string cargo(int n);
+void cargo(int n);
 main()
 {
     int n;
     cout << "Enter the count of cargo for transportation: ";
     cin >> n;
-    cout << cargo(n);
+    cargo(n);
 }
 
-string cargo(int n)
+void cargo(int n)
 {
     float tonnage, price = 0, minibus = 0, truck = 0, train = 0 , totalTonnage = 0 ;
     for (int i = 1; i <= n; i++)
@@ -35,5 +35,9 @@ string cargo(int n)
         totalTonnage += tonnage ;
     }
     cout << fixed << setprecision(2) ;
-    return to_string(price/totalTonnage) + "\n" + to_string(minibus/totalTonnage * 100) + "%\n" + to_string(truck/totalTonnage * 100) + "%\n" + to_string(train/totalTonnage * 100) + "%\n";
+    cout << price/totalTonnage << endl ;
+    cout << minibus/totalTonnage * 100 << "%" << endl;
+    cout << truck/totalTonnage * 100  << "%" << endl;
+    cout << train/totalTonnage * 100 << "%" << endl ;
 }
+
